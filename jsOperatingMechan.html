@@ -1,0 +1,503 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>javascript引擎内部运行机制 | Common Command Recording</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.3.2">
+        <meta name="author" content="snailsmail">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="./CommonAlgorithms.html" />
+    
+    
+    <link rel="prev" href="./jsCommon.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="3.1" data-basepath="." data-revision="Mon Jul 15 2019 10:44:31 GMT+0800 (CST)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="輸入並搜尋" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        介紹
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="commonCommand.html">
+            
+                
+                    <a href="./commonCommand.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        开发中常用命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="commonSoftware.html">
+            
+                
+                    <a href="./commonSoftware.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        常用软件的安装及使用
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="gitbook.html">
+            
+                
+                    <a href="./gitbook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        gitbook的安装及使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="weex.html">
+            
+                
+                    <a href="./weex.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        weex的安装及使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="sass.html">
+            
+                
+                    <a href="./sass.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        sass
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="nodeAndExpress.html">
+            
+                
+                    <a href="./nodeAndExpress.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        node and Express
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="jsCommon.html">
+            
+                
+                    <a href="./jsCommon.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        javascript整理
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="jsOperatingMechan.html">
+            
+                
+                    <a href="./jsOperatingMechan.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        javascript引擎内部运行机制
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="CommonAlgorithms.html">
+            
+                
+                    <a href="./CommonAlgorithms.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        常用算法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="interview.html">
+            
+                
+                    <a href="./interview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        前端面试
+                    </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                本書使用 GitBook 釋出
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="目錄"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="搜尋"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="字型設定"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">襯線體</button>
+        <button type="button" data-font="1" class="button">無襯線體</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">白色</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">棕褐色</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">夜間</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="分享"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    分享到 Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    分享到 Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    分享到 Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    分享到 Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    分享到 Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Common Command Recording</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="javascript%E5%BC%95%E6%93%8E%E5%86%85%E9%83%A8%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6">javascript&#x5F15;&#x64CE;&#x5185;&#x90E8;&#x8FD0;&#x884C;&#x673A;&#x5236;</h1>
+<h2 id="1-%E5%85%B3%E4%BA%8Emacrotask-%E5%AE%8F%E8%A7%82%E4%BB%BB%E5%8A%A1-%E5%92%8Cmicrotask-%E5%BE%AE%E8%A7%82%E4%BB%BB%E5%8A%A1">1.&#x5173;&#x4E8E;MacroTask(&#x5B8F;&#x89C2;&#x4EFB;&#x52A1;)&#x548C;MicroTask(&#x5FAE;&#x89C2;&#x4EFB;&#x52A1;)</h2>
+<pre><code>macroTask&#x548C;microTask&#x662F;&#x4E24;&#x79CD;&#x4EFB;&#x52A1;&#x961F;&#x5217;,&#x5927;&#x5BB6;&#x66F4;&#x719F;&#x6089;&#x5173;&#x4E8E;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x673A;&#x5236;
+&#x7684;&#x8BF4;&#x6CD5;:&#x4E3B;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;,&#x6BCF;&#x6B21;&#x4ECE;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x4E2D;&#x53D6;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x6267;&#x884C;.
+&#x5B8F;&#x89C2;&#x4EFB;&#x52A1;&#x662F;&#x6D4F;&#x89C8;&#x5668;&#x53D1;&#x8D77;&#x7684;&#x4EFB;&#x52A1;,&#x5FAE;&#x89C2;&#x4EFB;&#x52A1;&#x662F;js&#x5F15;&#x64CE;&#x53D1;&#x8D77;&#x7684;&#x4EFB;&#x52A1;.&#x540C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x4E2D;,
+&#x5FAE;&#x89C2;&#x4EFB;&#x52A1;&#x603B;&#x662F;&#x5148;&#x4E8E;&#x5B8F;&#x89C2;&#x4EFB;&#x52A1;&#x6267;&#x884C;
+</code></pre><h2 id="2-javascript%E5%BC%95%E6%93%8E%E5%AF%B9%E8%BF%99%E4%B8%A4%E7%A7%8D%E9%98%9F%E5%88%97%E7%9A%84%E5%88%86%E7%B1%BB">2.javascript&#x5F15;&#x64CE;&#x5BF9;&#x8FD9;&#x4E24;&#x79CD;&#x961F;&#x5217;&#x7684;&#x5206;&#x7C7B;:</h2>
+<pre><code>- macroTask
+   .setTimeout
+   .setInterval
+   .setImmediate
+   .requestAnimationFrame
+   .I/O
+   .UI rendering
+- microTask
+   .process.nextTick
+   .Promise
+   .Object.observe
+   .MustationObserve
+
+&#x5B8F;&#x4EFB;&#x52A1;&#x7684;&#x4F18;&#x5148;&#x7EA7;:&#x4E3B;&#x4EE3;&#x7801;&#x5FEB; &gt; setImmediate &gt; messageChannel
+ &gt; setTimeout/setInterval
+
+setImmediate&#x6307;&#x5B9A;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x603B;&#x662F;&#x6392;&#x5728;setTimeout&#x524D;&#x9762;
+&#x5FAE;&#x4EFB;&#x52A1;&#x7684;&#x4F18;&#x5148;&#x7EA7;:process.newxtTick &gt; Promise &gt; mutationObserver
+</code></pre><h2 id="3-%E4%B8%BE%E4%BE%8B%E8%AF%B4%E6%98%8E">3.&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;</h2>
+<pre><code>1).&#x4E0B;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;?
+  console.log(&quot;script start&quot;);
+
+  setTimeout(function () {
+    console.log(&quot;setTimeout&quot;);
+  }, 0);
+
+  Promise.resolve()
+  .then(function () {
+    console.log(&quot;promise1&quot;)
+  })
+  .then(function () {
+    console.log(&quot;promise2&quot;)
+  });
+
+  console.log(&quot;script end&quot;);
+
+  &#x7ED3;&#x679C;&#x987A;&#x5E8F;&#x4E3A;:script start &gt; start end &gt; promise1 &gt; 
+            promise2 &gt; setTimeout
+
+  2).
+  async function async1(){
+      console.log(&apos;async1 start&apos;)    // &#x4E3B;&#x7EBF;&#x7A0B;2
+      await async2()
+      console.log(&apos;async1 end&apos;)      // &#x5B8F;&#x89C2;&#x4EFB;&#x52A1;1 
+  }
+  async function async2(){
+      console.log(&apos;async2&apos;)          // &#x4E3B;&#x7EBF;&#x7A0B;3
+  }
+  console.log(&apos;script start&apos;)        // &#x4E3B;&#x7EBF;&#x7A0B;1
+  setTimeout(function(){
+      console.log(&apos;setTimeout&apos;)      // &#x5B8F;&#x89C2;&#x4EFB;&#x52A1;2
+  },0)  
+  async1();
+  new Promise(function(resolve){
+      console.log(&apos;promise1&apos;)        // &#x4E3B;&#x7EBF;&#x7A0B;4 
+      resolve();
+  }).then(function(){
+      console.log(&apos;promise2&apos;)        // &#x5FAE;&#x89C2;&#x4EFB;&#x52A1;1
+  })
+  console.log(&apos;script end&apos;)          // &#x4E3B;&#x7EBF;&#x7A0B;5
+
+  &#x7ED3;&#x679C;&#x987A;&#x5E8F;&#x4E3A;:
+    script start
+    async1 start
+    async2
+    promise1
+    script end
+    promise2
+    async1 end
+    setTimeout
+
+    &#x6267;&#x884C;&#x5230; async1 &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x4F1A;&#x6253;&#x5370;&#x51FA;&#x201C;async1 start&#x201D;
+    &#xFF08;&#x8FD9;&#x4E2A;&#x4E0D;&#x7528;&#x591A;&#x8BF4;&#x4E86;&#x5427;&#xFF0C;async &#x8868;&#x8FBE;&#x5F0F;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x7684;&#xFF09;&#xFF1B;
+    &#x7136;&#x540E;&#x6267;&#x884C;&#x5230; await async2()&#xFF0C;&#x53D1;&#x73B0; async2 &#x4E5F;&#x662F;&#x4E2A; async &#x5B9A;&#x4E49;
+    &#x7684;&#x51FD;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x4E86;&#x201C;console.log(&apos;async2&apos;)&#x201D;&#xFF0C;&#x540C;&#x65F6;
+    async2&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E2A;Promise&#xFF0C;&#x5212;&#x91CD;&#x70B9;&#xFF1A;&#x6B64;&#x65F6;&#x8FD4;&#x56DE;&#x7684;Promise&#x4F1A;&#x88AB;&#x653E;
+    &#x5165;&#x5230;&#x56DE;&#x8C03;&#x961F;&#x5217;&#x4E2D;&#x7B49;&#x5F85;&#xFF0C;await&#x4F1A;&#x8BA9;&#x51FA;&#x7EBF;&#x7A0B;&#xFF08;js&#x662F;&#x5355;&#x7EBF;&#x7A0B;&#x8FD8;&#x7528;&#x6211;&#x4ECB;&#x7ECD;&#x5417;&#xFF09;&#xFF0C;
+    &#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x4F1A;&#x8DF3;&#x51FA; async1&#x51FD;&#x6570; &#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#x3002;&#x7136;&#x540E;&#x6267;&#x884C;&#x5230; new Promise&#xFF0C;
+    &#x524D;&#x9762;&#x8BF4;&#x8FC7;&#x4E86;promise&#x662F;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5148;&#x6253;&#x5370;&#x51FA;&#x6765;&#x201C;promise1&#x201D;&#xFF0C;
+    &#x7136;&#x540E;&#x6267;&#x884C;&#x5230; resolve &#x7684;&#x65F6;&#x5019;&#xFF0C;resolve&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x5C31;&#x88AB;&#x653E;&#x5230;&#x56DE;&#x8C03;&#x961F;&#x5217;&#x4E2D;
+    &#xFF08;&#x524D;&#x9762;&#x90FD;&#x8BB2;&#x8FC7;&#x4E86;&#x4E0A;&#x8BFE;&#x8981;&#x597D;&#x597D;&#x542C;&#x554A;&#x5582;&#xFF09;&#x7B49;&#x5F85;&#xFF0C;&#x7136;&#x540E;&#x8DF3;&#x51FA;Promise&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C;&#xFF0C;
+    &#x8F93;&#x51FA;&#x201C;script end&#x201D;&#x3002;
+    &#x63A5;&#x4E0B;&#x6765;&#x662F;&#x91CD;&#x5934;&#x620F;&#x3002;&#x540C;&#x6B65;&#x7684;&#x4E8B;&#x4EF6;&#x90FD;&#x5FAA;&#x73AF;&#x6267;&#x884C;&#x5B8C;&#x4E86;&#xFF0C;&#x8C03;&#x7528;&#x6808;&#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x7A7A;&#x51FA;&#x6765;&#x4E86;&#xFF0C;
+    &#x90A3;&#x4E48;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x5C31;&#x4F1A;&#x53BB;&#x56DE;&#x8C03;&#x961F;&#x5217;&#x91CC;&#x9762;&#x53D6;&#x4EFB;&#x52A1;&#x7EE7;&#x7EED;&#x653E;&#x5230;&#x8C03;&#x7528;&#x6808;&#x91CC;&#x9762;&#x4E86;&#x3002;&#x8FD9;&#x65F6;&#x5019;
+    &#x53D6;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x662F;&#x524D;&#x9762; async1 &#x653E;&#x8FDB;&#x53BB;&#x7684;Promise&#xFF0C;&#x6267;&#x884C;
+    Promise&#x65F6;&#x53D1;&#x73B0;&#x53C8;&#x9047;&#x5230;&#x4E86;&#x4ED6;&#x7684;&#x771F;&#x547D;&#x5929;&#x5B50;resolve&#x51FD;&#x6570;&#xFF0C;&#x5212;&#x91CD;&#x70B9;&#xFF1A;
+    &#x8FD9;&#x4E2A;resolve&#x53C8;&#x4F1A;&#x88AB;&#x653E;&#x5165;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x7EE7;&#x7EED;&#x7B49;&#x5F85;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6B21;&#x8DF3;&#x51FA; async1&#x51FD;&#x6570; 
+    &#x7EE7;&#x7EED;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;
+    &#x63A5;&#x4E0B;&#x6765;&#x53D6;&#x5230;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x662F;&#x524D;&#x9762; new Promise &#x653E;&#x8FDB;&#x53BB;&#x7684; resolve&#x56DE;&#x8C03; 
+    &#x5566; yohoo&#xFF5E;&#x8FD9;&#x4E2A;resolve&#x88AB;&#x653E;&#x5230;&#x8C03;&#x7528;&#x6808;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x201C;promise2&#x201D;&#xFF0C;
+    &#x7136;&#x540E;&#x7EE7;&#x7EED;&#x53D6;&#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#x3002;
+    &#x540E;&#x9762;&#x7684;&#x4E8B;&#x60C5;&#x76F8;&#x4FE1;&#x4F60;&#x5DF2;&#x7ECF;&#x731C;&#x5230;&#x4E86;&#xFF0C;&#x6CA1;&#x9519;&#x8C03;&#x7528;&#x6808;&#x518D;&#x6B21;&#x7A7A;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x5C31;&#x53D6;&#x5230;&#x4E86;
+    &#x4E0B;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;&#xFF1A;&#x5386;&#x7ECF;&#x5343;&#x8F9B;&#x4E07;&#x82E6;&#x7EC8;&#x4E8E;&#x8F6E;&#x5230;&#x7684;&#x90A3;&#x4E2A;Promise&#x7684;resolve&#x56DE;&#x8C03;&#xFF01;&#xFF01;&#xFF01;
+    &#x6267;&#x884C;&#x5B83;&#xFF08;&#x5565;&#x4E5F;&#x4E0D;&#x4F1A;&#x6253;&#x5370;&#x7684;&#xFF0C;&#x56E0;&#x4E3A; async2 &#x5E76;&#x6CA1;&#x6709;return&#x4E1C;&#x897F;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;
+    resolve&#x7684;&#x53C2;&#x6570;&#x662F;undefined&#xFF09;&#xFF0C;
+    &#x6B64;&#x65F6; await &#x5B9A;&#x4E49;&#x7684;&#x8FD9;&#x4E2A; Promise &#x5DF2;&#x7ECF;&#x6267;&#x884C;&#x5B8C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x4E86;&#x7ED3;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;
+    &#x4EE5;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x6267;&#x884C; async1&#x51FD;&#x6570; &#x540E;&#x9762;&#x7684;&#x4EFB;&#x52A1;&#x4E86;&#xFF0C;&#x90A3;&#x5C31;&#x662F;
+    &#x201C;console.log(&apos;async1 end&apos;)&#x201D;&#x3002;
+    &#x8C1C;&#x4E4B;&#x56F0;&#x60D1;&#x7684;&#x90A3;&#x4E24;&#x53E5;&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF08;&#x201C;promise2&#x201D;&#x3001;&#x201C;async1 end&#x201D;&#xFF09;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x6765;&#x7684;&#xFF5E;
+</code></pre><h2 id="javascript-v8%E5%BC%95%E6%93%8E">javascript V8&#x5F15;&#x64CE;</h2>
+<pre><code>&#x8FD9;&#x4E2A;&#x5F15;&#x64CE;&#x4E3B;&#x8981;&#x7531;&#x4E24;&#x90E8;&#x5206;&#x7EC4;&#x6210;:
+  - &#x5185;&#x5B58;&#x5806;:&#x5185;&#x5B58;&#x5206;&#x914D;&#x53D1;&#x751F;&#x7684;&#x5730;&#x65B9;
+  - &#x8C03;&#x7528;&#x6808;:&#x4EE3;&#x7801;&#x6267;&#x884C;&#x65F6;&#x7684;&#x5730;&#x65B9;      
+&#x8FD0;&#x884C;&#x65F6;:
+   [v8&#x5F15;&#x64CE;](./images/v8&#x5F15;&#x64CE;.png)   
+&#x8C03;&#x7528;&#x6808;:
+  javascript&#x662F;&#x4E00;&#x95E8;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x8BED;&#x8A00;,&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x6808;,&#x56E0;&#x6B64;,&#x5B83;&#x540C;&#x4E00;&#x65F6;
+  &#x95F4;&#x53EA;&#x80FD;&#x505A;&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;
+  &#x8C03;&#x7528;&#x6808;&#x662F;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;.&#x5B83;&#x8BB0;&#x5F55;&#x4EE3;&#x7801;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;,&#x5F53;&#x6211;&#x4EEC;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65F6;,&#x5B83;
+  &#x4F1A;&#x5C06;&#x5176;&#x653E;&#x7F6E;&#x5728;&#x6808;&#x9876;.&#x5F53;&#x4ECE;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x65F6;&#x5019;,&#x5C31;&#x4F1A;&#x5C06;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4ECE;&#x6808;&#x9876;&#x5F39;&#x51FA;,
+  &#x8FD9;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x6808;&#x505A;&#x7684;&#x4E8B;&#x60C5;.    
+&#x5806;&#x6808;&#x6EA2;&#x51FA;:
+  &#x5F53;&#x4F60;&#x8FBE;&#x5230;&#x8C03;&#x7528;&#x6808;&#x6700;&#x5927;&#x5927;&#x5C0F;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x72B6;&#x51B5;,&#x800C;&#x4E14;&#x8FD9;&#x5F88;&#x5BB9;&#x6613;&#x53D1;&#x751F;,&#x7279;&#x522B;&#x662F;
+  &#x5728;&#x4F60;&#x5199;&#x9012;&#x5F52;&#x7684;&#x65F6;&#x5019;&#x6CA1;&#x6709;&#x5168;&#x65B9;&#x4F4D;&#x7684;&#x6D4B;&#x8BD5;&#x5B83;:
+   &#x4F8B;&#x5982;:
+    funcction foo() {
+      foo();
+    } 
+    foo();
+    &#x5F53;js&#x5F15;&#x64CE;&#x6267;&#x884C;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x65F6;,&#x5B83;&#x4ECE;foo&#x51FD;&#x6570;&#x5F00;&#x59CB;,&#x7136;&#x540E;&#x8FD9;&#x4E2A;&#x9012;&#x5F52;&#x7684;&#x51FD;&#x6570;,&#x800C;&#x4E14;&#x662F;
+    &#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5F00;&#x59CB;&#x8C03;&#x7528;&#x81EA;&#x5DF1;,&#x5BFC;&#x81F4;&#x4E86;&#x5806;&#x6808;&#x6EA2;&#x51FA;.
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./jsCommon.html" class="navigation navigation-prev " aria-label="Previous page: javascript整理"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./CommonAlgorithms.html" class="navigation navigation-next " aria-label="Next page: 常用算法"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"expandable-chapters-small":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
